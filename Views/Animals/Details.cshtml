@@ -1,0 +1,42 @@
+﻿@model petRescueApplication.Models.Animal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Animal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AnimalsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnimalsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BreedName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BreedName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

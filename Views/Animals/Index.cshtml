@@ -1,0 +1,45 @@
+﻿@model IEnumerable<petRescueApplication.Models.Animal>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimalsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BreedName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnimalsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CommonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BreedName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
